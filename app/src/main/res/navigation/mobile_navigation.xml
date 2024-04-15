@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_allstudents">
+
+    <fragment
+        android:id="@+id/navigation_allstudents"
+        android:name="com.example.roomdbwithdiffutils.ui.allstudents.AllStudentsFrag"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_allst" >
+
+        <action
+            android:id="@+id/action_navigation_allstudents_to_navigation_stprofile"
+            app:destination="@id/navigation_stprofile" />
+        <action
+            android:id="@+id/action_navigation_allstudents_to_navigation_addst"
+            app:destination="@id/navigation_addst" />
+        <action
+            android:id="@+id/action_navigation_allstudents_to_updatestFragment"
+            app:destination="@id/updatestFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_addst"
+        android:name="com.example.roomdbwithdiffutils.ui.addst.AddStFrag"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_addstu" >
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_stprofile"
+        android:name="com.example.roomdbwithdiffutils.ui.studentprofile.StudentProfileFrag"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_stprofile" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/updatestFragment"
+        android:name="com.example.roomdbwithdiffutils.ui.updateinfo.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <argument
+            android:name="update"
+            app:argType="com.example.roomdbwithdiffutils.roomdb.StInfoEntity" />
+    </fragment>
+
+</navigation>
